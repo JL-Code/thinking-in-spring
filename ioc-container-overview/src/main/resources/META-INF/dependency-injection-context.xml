@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util
+        https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- 通过 import 导入 复用 dependency-lookup-context.xml -->
+    <import resource="dependency-lookup-context.xml"/>
+
+    <bean id="userRepository" class="org.spring.learn.ioc.overview.repository.UserRepository"
+          autowire="byType"><!--自动装配（byType）-->
+        <!-- 通过 util:list 硬编码 user bean -->
+        <!--        <property name="users">-->
+        <!--            <util:list>-->
+        <!--                <ref bean="superUser"/>-->
+        <!--                <ref bean="user"/>-->
+        <!--            </util:list>-->
+        <!--        </property>-->
+    </bean>
+</beans>
