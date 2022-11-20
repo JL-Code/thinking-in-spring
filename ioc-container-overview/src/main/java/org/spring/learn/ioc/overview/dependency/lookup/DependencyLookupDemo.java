@@ -27,7 +27,7 @@ public class DependencyLookupDemo {
         System.out.println("by id user bean : " + user);
         lookupByAnnotation(beanFactory);
         lookupByType(beanFactory);
-
+        lookupInLazy(beanFactory);
         //  按照类型查找集合对象
         lookupCollectionByType(beanFactory);
 

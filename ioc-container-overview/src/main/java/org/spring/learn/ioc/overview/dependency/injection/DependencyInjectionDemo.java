@@ -13,7 +13,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class DependencyInjectionDemo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // 1. 配置 XML 配置文件
         BeanFactory beanFactory = new ClassPathXmlApplicationContext("classpath:/META-INF/dependency-injection-context.xml");
         // 2. 启动 Spring 应用上下文
@@ -25,10 +25,7 @@ public class DependencyInjectionDemo {
         // throw NoSuchBeanDefinitionException,.
 //        System.out.println("beanFactory 无法通过 beanFactory.getBean 查找出来：" + beanFactory.getBean(BeanFactory.class));
         System.out.println(userRepository.getObjectFactory().getObject());
-
         // 延迟依赖注入
-
         System.out.println(userRepository.getUserObjectFactory().getObject());
     }
-
 }

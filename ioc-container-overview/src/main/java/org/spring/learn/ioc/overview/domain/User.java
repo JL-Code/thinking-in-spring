@@ -1,9 +1,6 @@
 package org.spring.learn.ioc.overview.domain;
 
 
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Indexed;
-
 /**
  * @author codeme
  */
@@ -37,5 +34,26 @@ public class User {
     @Override
     public String toString() {
         return "{name:'" + this.name + "',id:" + this.id + "}";
+    }
+
+    /**
+     * User 静态工厂
+     *
+     * @param id   用户 id
+     * @param name 用户名
+     * @return 一个实例化的 User 对象
+     */
+    public static User valueOf(Long id, String name) {
+        User user = new User();
+        user.setId(id);
+        user.setName(name);
+        return user;
+    }
+
+    public static User valueOf() {
+        User user = new User();
+        user.setId(19L);
+        user.setName("codeme-static-method");
+        return user;
     }
 }

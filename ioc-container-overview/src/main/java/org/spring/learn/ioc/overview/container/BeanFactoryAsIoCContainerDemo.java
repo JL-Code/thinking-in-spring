@@ -19,7 +19,6 @@ public class BeanFactoryAsIoCContainerDemo {
 
     public static void main(String[] args) {
         // 1. 创建一个 BeanFactory
-
         DefaultListableBeanFactory defaultListableBeanFactory = new DefaultListableBeanFactory();
         // 2. 添加 XML Bean 定义到 BeanFactory
         XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(defaultListableBeanFactory);

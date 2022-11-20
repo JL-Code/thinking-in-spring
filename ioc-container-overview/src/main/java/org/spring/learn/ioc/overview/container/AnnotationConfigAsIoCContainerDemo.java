@@ -19,7 +19,7 @@ import java.util.Map;
 @SuppressWarnings("AlibabaClassNamingShouldBeCamel")
 public class AnnotationConfigAsIoCContainerDemo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // 1. 创建一个 ApplicationContext
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
         // 2. 通过注解将 Bean 加入到容器
@@ -28,6 +28,11 @@ public class AnnotationConfigAsIoCContainerDemo {
         applicationContext.refresh();
         // 4. 通过依赖查找获取 Bean
         lookupCollectionByType(applicationContext);
+
+        UserFactoryBean userFactoryBean = applicationContext.getBean(UserFactoryBean.class);
+        User user = userFactoryBean.getObject();
+        System.out.println("userFactoryBean user: " + user);
+        System.out.println(userFactoryBean.getObject() == userFactoryBean.getObject());
     }
 
     @Bean
@@ -37,6 +42,12 @@ public class AnnotationConfigAsIoCContainerDemo {
         user.setName("相貌平平");
         return user;
     }
+
+    @Bean
+    public UserFactoryBean userFactoryBean() {
+        return new UserFactoryBean();
+    }
+
 
     private static void lookupCollectionByType(BeanFactory beanFactory) {
         ListableBeanFactory listableBeanFactory = (ListableBeanFactory) beanFactory;
