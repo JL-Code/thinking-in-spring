@@ -4,15 +4,20 @@ import org.spring.learn.ioc.overview.domain.User;
 import org.spring.learn.spring.bean.factory.DefaultUserFactory;
 import org.spring.learn.spring.bean.factory.UserFactory;
 import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Lazy;
 
+import javax.annotation.PostConstruct;
 import java.util.Map;
 
 /**
  * Bean 初始化示例
+ * {@link PostConstruct}
+ * {@link Bean#initMethod()}
+ * {@link InitializingBean#afterPropertiesSet()}
  * <p>创建时间: 2022/11/19 </p>
  *
  * @author <a href="mailto:jiangliu0316@outlook.com" rel="nofollow">codeme</a>
