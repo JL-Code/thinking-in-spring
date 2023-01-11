@@ -1,6 +1,5 @@
 package org.spring.learn.spring.bean.initialization;
 
-import org.spring.learn.ioc.overview.domain.User;
 import org.spring.learn.spring.bean.factory.DefaultUserFactory;
 import org.spring.learn.spring.bean.factory.UserFactory;
 import org.springframework.beans.factory.BeanFactory;

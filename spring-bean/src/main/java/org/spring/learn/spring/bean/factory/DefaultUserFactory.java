@@ -57,4 +57,15 @@ public class DefaultUserFactory implements UserFactory, InitializingBean, Dispos
     public void destroy() throws Exception {
         System.out.println("2. DisposableBean#destroy Bean 销毁中...");
     }
+
+    /**
+     * 当垃圾收集确定不再有对对象的引用时，由对象上的垃圾收集器调用。
+     * 子类重写 finalize方法以释放系统资源或执行其他清理。
+     *
+     * @throws Throwable
+     */
+    @Override
+    public void finalize() throws Throwable {
+        System.out.println("当前对象，正在被 GC 回收...");
+    }
 }
