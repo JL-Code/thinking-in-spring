@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="spring-mvc:Web exploded">
+    <output-path>$PROJECT_DIR$/spring-mvc/out/artifacts/spring_mvc_Web_exploded</output-path>
+    <properties id="ant-preprocessing">
+      <options enabled="true" />
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="spring-mvc" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="spring-mvc/web/Web" />
+    </root>
+  </artifact>
+</component>
