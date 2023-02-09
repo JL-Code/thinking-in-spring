@@ -30,10 +30,11 @@ public class RedisTest {
     public void batchWrite(RedisTemplate<String, String> redisTemplate) {
         ValueOperations<String, String> ops = redisTemplate.opsForValue();
         // 利用 15 个线程，每个循环 1w 次写入字符串。
+        int count = 10000;
         for (int i = 0; i < 15; i++) {
             new Thread(() -> {
                 String name = Thread.currentThread().getName();
-                for (int j = 0; j < 100000; j++) {
+                for (int j = 0; j < count; j++) {
                     String key = String.format("string-key:%s:%d", name, j);
                     System.out.printf("thread name: string-key:%s key: %s \n", name, key);
                     ops.set(key, String.valueOf(j));

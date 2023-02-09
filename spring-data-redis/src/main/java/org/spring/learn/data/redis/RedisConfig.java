@@ -19,7 +19,7 @@ public class RedisConfig {
     @Bean
     public LettuceConnectionFactory redisConnFactoryForStandalone() {
         // Redis 单机版
-        return new LettuceConnectionFactory(new RedisStandaloneConfiguration("127.0.0.1", 6379));
+        return new LettuceConnectionFactory(new RedisStandaloneConfiguration("127.0.0.1", 55000));
     }
 
     /**

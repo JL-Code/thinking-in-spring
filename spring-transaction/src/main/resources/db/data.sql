@@ -1,0 +1,1 @@
+insert into def_person  values (1,"jiangy",1,1);

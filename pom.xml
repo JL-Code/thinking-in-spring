@@ -9,6 +9,7 @@
         <module>ioc-container-overview</module>
         <module>spring-bean</module>
         <module>spring-data-redis</module>
+        <module>spring-transaction</module>
     </modules>
     <packaging>pom</packaging>
 
