@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface ConfigurableApplicationContext{
+    +refresh()
+}
+
+abstract class AbstractApplicationContext implements ConfigurableApplicationContext{
+    +refresh()
+}
+interface BeanFactoryPostProcessor{
+    +postProcessBeanFactory(ConfigurableListableBeanFactory)
+}
+note left: BeanFactory 后置处理器（hook），\n可用于调整 BeanDefinition
+note right of BeanFactoryPostProcessor::postProcessBeanFactory
+在标准初始化之后，修改应用程序上下文的内部Bean工厂。
+所有的Bean定义都已被加载，但还没有Bean被实例化。
+这允许重写或添加属性，即使是对急于初始化的Bean。
+end note
+AbstractApplicationContext *--> BeanFactoryPostProcessor:1:N
+
+@enduml

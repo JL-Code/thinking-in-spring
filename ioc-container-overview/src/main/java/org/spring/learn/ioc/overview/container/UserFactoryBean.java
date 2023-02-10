@@ -2,6 +2,7 @@ package org.spring.learn.ioc.overview.container;
 
 import org.spring.learn.ioc.overview.domain.User;
 import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.config.BeanPostProcessor;
 
 /**
  * FactoryBean 示例 {@link FactoryBean}

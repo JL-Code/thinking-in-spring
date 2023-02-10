@@ -6,6 +6,7 @@ import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Import;
 
 import java.util.Map;
 
@@ -17,6 +18,7 @@ import java.util.Map;
  * @since
  */
 @SuppressWarnings("AlibabaClassNamingShouldBeCamel")
+@Import(UserBeanPostProcesser.class)
 public class AnnotationConfigAsIoCContainerDemo {
 
     public static void main(String[] args) throws Exception {

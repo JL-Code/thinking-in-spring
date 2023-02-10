@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor User
+note left of User
+扫码登录工作流程 V1.0
+end note
+participant Mobile
+participant PC
+participant Server
+database Redis
+
+User -> PC: 访问
+PC -> Server: 请求二维码
+Server -> Server: 生成二维码信息（二维码ID+\n用于获取用户授权的URL）
+Server->Redis: 写入二维码信息（id作为key，\n value：是否扫描、是否过期、临时Token）
+Redis-->Server: success
+Server --> PC: 二维码信息
+PC -> PC: 渲染二维码
+PC -> PC: 轮询二维码扫描状态
+PC-->User:二维码
+
+Mobile -> PC: 扫描二维码
+Mobile -> Mobile: 重定向到授权页面
+Mobile -> Server: 确认登录授权
+Server -> Server: 生成 Temporary Token，添加到Redis中
+PC -> PC: 轮询二维码状态(扫码成功可获取到 Temporary Token)
+PC -> Server: 使用 Temporary Token 换 Token
+Server --> PC: Token
+@enduml
