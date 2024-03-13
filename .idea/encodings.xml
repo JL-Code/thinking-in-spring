@@ -3,6 +3,12 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/ioc-container-overview/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ioc-container-overview/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/logging-modules/log-mdc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/logging-modules/log-mdc/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/logging-modules/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/logging-modules/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/parent-spring-5/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/parent-spring-5/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-bean/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-bean/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-data-redis/src/main/java" charset="UTF-8" />
